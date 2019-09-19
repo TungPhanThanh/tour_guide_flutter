@@ -23,6 +23,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  font_awesome_flutter: ^8.5.0
 
 dev_dependencies:
   flutter_test:
@@ -41,8 +42,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #  - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -68,5 +69,28 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  fonts:
+    - family: VarelaRound
+      fonts:
+        - asset: assets/fonts/VarelaRound-Regular.ttf
+          weight: 900
+
+    - family: Dosis
+      fonts:
+        - asset: assets/fonts/dosis.medium.ttf
+
+    - family: ClassicCommic
+      fonts:
+        - asset: assets/fonts/Classic_Comic_W01_Regular.ttf
+
+    - family: Cartoonist
+      fonts:
+        - asset: assets/fonts/SFCartoonistHand.ttf
+        - asset: assets/fonts/SFCartoonistHand-Bold.ttf
+        - asset: assets/fonts/SFCartoonistHand-Italic.ttf
+
+    - family: Qarmic
+      fonts:
+        - asset: assets/fonts/Qarmic.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
