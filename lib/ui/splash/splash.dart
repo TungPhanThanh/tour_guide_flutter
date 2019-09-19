@@ -7,7 +7,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     super.initState();
@@ -19,22 +18,41 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.green,
-      child: Center(
-        child: FlutterLogo(size: 200),
-      ),
+    return Stack(
+      fit: StackFit.expand,
+      children: <Widget>[
+        DecoratedBox(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.fitHeight,
+              image: AssetImage('assets/images/splash.jpg'),
+            ),
+          ),
+        ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: new Container(
+            margin: const EdgeInsets.only(bottom: 30.0),
+            child: new CircularProgressIndicator(),
+          ),
+        )
+      ],
     );
   }
 
   Future initData() async {
-    await Future.delayed(Duration(seconds: 3));
+    await Future.delayed(Duration(seconds: 5));
   }
 
   void navigateToHomeScreen() {
     /// Push home screen and replace (close/exit) splash screen.
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => HomeScreen()));
   }
-
 }
