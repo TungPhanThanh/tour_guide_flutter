@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tour_guide/ui/home/home.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Login extends StatefulWidget {
@@ -70,102 +71,109 @@ class _LoginState extends State<Login> {
               ],
             ),
             Expanded(
-                child: new Stack(
-                  children: <Widget>[
-                    Align(
+              child: new Stack(
+                alignment: Alignment.bottomCenter,
+                children: <Widget>[
+                  SingleChildScrollView(
+                    child: Align(
                       alignment: Alignment.bottomCenter,
                       child: Container(
-                          margin: const EdgeInsets.only(bottom: 30.0),
-                          child: Column(
-                            verticalDirection: VerticalDirection.up,
-                            children: <Widget>[
-                              GestureDetector(
-                                onTap: () => Navigator.push(context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Login())),
-                                child: Container(
-                                    width: 250,
-                                    decoration: BoxDecoration(
-                                      color: Colors.green.withOpacity(0.5),
-                                      border: Border.all(
-                                          color: Colors.green.withOpacity(0.5)),
-                                      borderRadius:
-                                      BorderRadius.all(Radius.circular(5)),
-                                    ),
-                                    padding: const EdgeInsets.symmetric(
-                                      vertical: 15.0,
-                                    ),
-                                    child: new Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Icon(
-                                          FontAwesomeIcons.facebookF,
-                                          size: 14.0,
-                                          color: Colors.white,
-                                        ),
-                                        SizedBox(width: 10.0),
-                                        Text(
-                                          'Continue with Facebook',
-                                          style: TextStyle(
-                                            fontSize: 18,
-                                            color: Colors.white,
-                                            fontFamily: 'Cartoonist',
-                                          ),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ],
-                                    )
-                                ),
-                              ),
-                              SizedBox(height: 50.0),
-                              GestureDetector(
-                                onTap: () {},
-                                child: Container(
+                        margin: const EdgeInsets.only(bottom: 30.0),
+                        child: Column(
+                          verticalDirection: VerticalDirection.up,
+                          children: <Widget>[
+                            GestureDetector(
+                              onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Login())),
+                              child: Container(
                                   width: 250,
                                   decoration: BoxDecoration(
+                                    color: Colors.green.withOpacity(0.5),
                                     border: Border.all(
-                                    color: Colors.white.withOpacity(0.5)),
+                                        color: Colors.green.withOpacity(0.5)),
                                     borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
+                                        BorderRadius.all(Radius.circular(5)),
                                   ),
                                   padding: const EdgeInsets.symmetric(
-                                    vertical: 8.0,
+                                    vertical: 15.0,
                                   ),
-                                  child: new Text(
-                                    'Log in',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.white,
-                                      fontFamily: 'Cartoonist',
-                                    ),
-                                    textAlign: TextAlign.center,
+                                  child: new Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Icon(
+                                        FontAwesomeIcons.facebookF,
+                                        size: 14.0,
+                                        color: Colors.white,
+                                      ),
+                                      SizedBox(width: 10.0),
+                                      Text(
+                                        'Continue with Facebook',
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          color: Colors.white,
+                                          fontFamily: 'Cartoonist',
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  )),
+                            ), //connect with facebook
+                            SizedBox(height: 50.0),
+                            GestureDetector(
+                              onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomePage())),
+                              child: Container(
+                                width: 250,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: Colors.white.withOpacity(0.5)),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(5)),
+                                ),
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 8.0,
+                                ),
+                                child: new Text(
+                                  'Log in',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.white,
+                                    fontFamily: 'Cartoonist',
                                   ),
+                                  textAlign: TextAlign.center,
                                 ),
                               ),
-                              SizedBox(height: 10.0),
-                              Container(
-                                width: 250,
-                                child: TextFormField(
-                                  decoration: InputDecoration(hintText: 'Password'),
-                                  keyboardType: TextInputType.emailAddress,
-                                  cursorColor: Colors.white,
-                                ),
+                            ), //login button
+                            SizedBox(height: 10.0),
+                            Container(
+                              width: 250,
+                              child: TextFormField(
+                                decoration:
+                                    InputDecoration(hintText: 'Password'),
+                                keyboardType: TextInputType.emailAddress,
+                                cursorColor: Colors.white,
                               ),
-                              SizedBox(height: 10.0),
-                              Container(
-                                width: 250,
-                                child: TextFormField(
-                                  decoration: InputDecoration(hintText: 'Email'),
-                                  keyboardType: TextInputType.emailAddress,
-                                  cursorColor: Colors.white,
-                                ),
-                              )
-                            ],
-                          ),
+                            ),
+                            SizedBox(height: 10.0),
+                            Container(
+                              width: 250,
+                              child: TextFormField(
+                                decoration: InputDecoration(hintText: 'Email'),
+                                keyboardType: TextInputType.emailAddress,
+                                cursorColor: Colors.white,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
