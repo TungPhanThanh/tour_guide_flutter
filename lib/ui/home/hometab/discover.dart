@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tour_guide/ui/setting/setting.dart';
 
 class DiscoverTab extends StatelessWidget {
   static final String path = "lib/src/pages/travel/travel_home.dart";
@@ -91,10 +92,14 @@ class _HomeScreenTopState extends State<HomeScreenTop> {
                         ],
                       ),
                       Spacer(),
-                      Icon(
-                        Icons.settings,
-                        color: Colors.white,
-                      )
+                      GestureDetector(
+                        onTap: () => Navigator.push(context, MaterialPageRoute(
+                            builder: (context) => Setting())),
+                        child: Icon(
+                          Icons.settings,
+                          color: Colors.white,
+                        ),
+                      ),
                     ],
                   ),
                 ),
