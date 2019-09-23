@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tour_guide/ui/home/home.dart';
+import '../../root.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -53,6 +53,6 @@ class _SplashScreenState extends State<SplashScreen> {
   void navigateToHomeScreen() {
     /// Push home screen and replace (close/exit) splash screen.
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        context, MaterialPageRoute(builder: (context) => RootScreen()));
   }
 }
